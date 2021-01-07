@@ -5,6 +5,8 @@ import { BonServiceRoutingModule } from './bon-service-routing.module';
 import { BonServiceComponent } from './bon-service.component';
 import { BonServiceService } from './bon-service.service';
 import { HttpClientModule } from '@angular/common/http';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { NbCardModule } from '@nebular/theme';
 
 
 @NgModule({
@@ -14,7 +16,9 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     CommonModule,
     BonServiceRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    Ng2SmartTableModule,
+    NbCardModule
   ],
   providers: [
     BonServiceService

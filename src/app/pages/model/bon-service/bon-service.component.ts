@@ -11,6 +11,40 @@ export class BonServiceComponent implements OnInit {
   bonservice: BonService = new BonService();
   dataSource: BonService[];
 
+  settings = {
+    add: {
+      addButtonContent: '<i class="nb-plus"></i>',
+      createButtonContent: '<i class="nb-checkmark"></i>',
+      cancelButtonContent: '<i class="nb-close"></i>',
+    },
+    edit: {
+      editButtonContent: '<i class="nb-edit"></i>',
+      saveButtonContent: '<i class="nb-checkmark"></i>',
+      cancelButtonContent: '<i class="nb-close"></i>',
+    },
+    delete: {
+      deleteButtonContent: '<i class="nb-trash"></i>',
+      confirmDelete: true,
+    },
+    columns: {
+      id: {
+        title: 'id',
+        type: 'number',
+      },
+      firstName: {
+        title: 'numBS',
+        type: 'string',
+      },
+      lastName: {
+        title: 'dateBS',
+        type: 'Date',
+      },
+      username: {
+        title: 'Client',
+        type: 'idClient',
+      },
+    },
+  };
 
   constructor(private bonServiceService : BonServiceService) { }
 
