@@ -31,15 +31,15 @@ export class BonServiceComponent implements OnInit {
         title: 'id',
         type: 'number',
       },
-      firstName: {
+      numBS: {
         title: 'numBS',
         type: 'string',
       },
-      lastName: {
+      dateBS: {
         title: 'dateBS',
         type: 'Date',
       },
-      username: {
+      Client: {
         title: 'Client',
         type: 'idClient',
       },
