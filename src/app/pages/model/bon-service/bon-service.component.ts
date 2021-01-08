@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Client } from 'app/pages/entities/client';
 import { BonService } from '../../entities/bonService';
 import { BonServiceService } from './bon-service.service';
 @Component({
@@ -39,14 +40,20 @@ export class BonServiceComponent implements OnInit {
         title: 'dateBS',
         type: 'Date',
       },
-      Client: {
-        title: 'Client',
-        type: 'idClient',
-      },
+      idClient:{
+        title:"Client",
+        valuePrepareFunction: (idClient) => {
+            return idClient.nom;
+        }
+      }
     },
   };
 
-  constructor(private bonServiceService : BonServiceService) { }
+
+
+  constructor(private bonServiceService : BonServiceService) {
+
+  }
 
   ngOnInit(): void {
     this.getAllBonServices();
@@ -62,7 +69,6 @@ export class BonServiceComponent implements OnInit {
     this.bonServiceService.deleteBonService(bonService).subscribe();
 
   }
-
 
 }
 
