@@ -9,9 +9,14 @@ import { AppComponent } from 'app/app.component'
   providedIn: 'root'
 })
 export class ClientPhysiqueService {
+  public  httpBackEndServer = "http://localhost:8080/";
 
   constructor(private http: HttpClient) { }
 
+  /** GET ClientPhysiques from the server */
+  getClientPhysiques(): Observable<clientPhysique[]>{
+    return this.http.get<[clientPhysique]>(this.httpBackEndServer + 'clientPhysiques')
+  }
 
 
 }
